@@ -1,39 +1,68 @@
+import imgMobileDark from "./assets/images/bg-mobile-dark.jpg"
+import sun from "./assets/images/icon-sun.svg"
+import iconX from "./assets/images/icon-cross.svg"
 import './App.css'
 
 function App() {
 
   return (
-    <main>
-      <header>
-        <h1>TODO</h1>
+    <main className='todo dark'>
+      <figure className='todo__image'>
+        <img src={imgMobileDark} alt='' className='todo__img' />
+      </figure>
 
-        <div>dark</div>
-      </header>
+      <div className='todo__container'>
+        <header className='todo__header'>
+          <h1 className='todo__title'>TODO</h1>
 
-      {/* CREATE TASK  */}
-      <div>
-        <div></div>
-        <input type="text" />
-      </div>
+          <img src={sun} alt="sun" className='todo__dark' />
+        </header>
 
-      <div>
+        {/* CREATE TASK  */}
+        <div className='todo__new'>
+          <div className='todo__isCompleted'></div>
+          <input type="text" className='todo__input' placeholder='Create a new todo...' />
+        </div>
 
-        {/* LIST TASKS  */}
-        <div></div>
+        <div className='listo__container'>
 
-        {/* OPTIONS FILTERS */}
-        <ul>
-          <li>5 items left</li>
-          <li>All</li>
-          <li>Active</li>
-          <li>Completed</li>
-          <li>Clear Completed</li>
+          {/* LIST TASKS  */}
+          <ul className='list'>
+            <li className='list__item'>
+              <div className='todo__isCompleted'></div>
+              Tarea numero 1
+              <img src={iconX} alt="x" />
+            </li>
+            <li className='list__item'>
+              <div className='todo__isCompleted'></div>
+              Tarea numero 2
+            </li>
+            <li className='list__item'>
+              <div className='todo__isCompleted'></div>
+              Tarea numero 3
+            </li>
+          </ul>
+
+          {/* OPTIONS FILTERS */}
+          <ul className='filter__desktop'>
+            <li className='filter__item'>5 items left</li>
+            <li className='filter__item'>All</li>
+            <li className='filter__item'>Active</li>
+            <li className='filter__item'>Completed</li>
+            <li className='filter__item'>Clear Completed</li>
+          </ul>
+        </div>
+
+        <ul className='filter__mobile'>
+          <li className='filter__item'>All</li>
+          <li className='filter__item'>Active</li>
+          <li className='filter__item'>Completed</li>
         </ul>
-      </div>
 
-      <footer>
-        Drag and drop to reader list
-      </footer>
+        <footer>
+          Drag and drop to reader list
+        </footer>
+      </div>
     </main>
   )
 }

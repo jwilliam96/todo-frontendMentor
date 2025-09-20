@@ -8,12 +8,93 @@
 }
 
 .dark {
-    --Navy-950: hsl(235, 21%, 11%);
-    --Navy-900: hsl(235, 24%, 19%);
-    --Purple-300: hsl(234, 39%, 85%);
-    --Purple-100: (hover): hsl(236, 33%, 92%);
+    --fondo: hsl(235, 21%, 11%);
+    --fondo-input: hsl(235, 24%, 19%);
+    --fondo-list-item: hsl(235, 24%, 19%);
+    --color-text: hsl(234, 39%, 85%);
+    --Purple-100-hover: hsl(236, 33%, 92%);
     --Purple-600: hsl(235, 16%, 43%);
     --Purple-700: hsl(233, 14%, 35%);
-    --Purple-800: hsl(237, 14%, 26%);
+    --color-border: hsl(237, 14%, 26%);
     --Gray-600: hsl(236, 9%, 61%);
+}
+
+.todo {
+    position: relative;
+    min-height: 100vh;
+    background-color: var(--fondo);
+    color: var(--color-text);
+}
+
+.todo__image {
+    position: absolute;
+    background-color: red;
+    width: 100%;
+    height: 12.5rem;
+}
+
+.todo__img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.todo__container {
+    position: relative;
+    top: 3rem;
+    margin: 0 auto;
+    max-width: 25rem;
+    padding: 0 1.5rem;
+}
+
+.todo__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.8rem;
+}
+
+.todo__dark {
+    width: 1.4rem;
+    aspect-ratio: 1;
+}
+
+.todo__new {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    background-color: var(--fondo-input);
+    padding: 0.8rem;
+    border-radius: 0.4rem;
+    margin-bottom: 1rem;
+}
+
+.todo__isCompleted {
+    width: 1.8rem;
+    aspect-ratio: 1;
+    border-radius: 3.12rem;
+    border: 2px solid var(--color-border);
+}
+
+.todo__input {
+    width: 100%;
+    background-color: var(--fondo-input);
+    border: none;
+}
+
+.list {
+    border-radius: 0.4rem;
+    overflow: hidden;
+}
+
+.list__item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    background-color: var(--fondo-list-item);
+    padding: 0.8rem;
+}
+
+.filter__desktop {
+    display: none;
 }
