@@ -19,7 +19,7 @@ function App() {
         </header>
 
         {/* CREATE TASK  */}
-        <div className='todo__new'>
+        <div className='todo__new item'>
           <div className='todo__isCompleted'></div>
           <input type="text" className='todo__input' placeholder='Create a new todo...' />
         </div>
@@ -28,19 +28,22 @@ function App() {
 
           {/* LIST TASKS  */}
           <ul className='list'>
-            <li className='list__item'>
+            <li className='list__item item'>
               <div className='todo__isCompleted'></div>
-              Tarea numero 1
-              <img src={iconX} alt="x" />
+              <span>Tarea numero 1</span>
+              <img src={iconX} alt="x" className="list__item-icon" />
             </li>
-            <li className='list__item'>
+            <li className='list__item item'>
               <div className='todo__isCompleted'></div>
-              Tarea numero 2
+              <span>Tarea numero 2</span>
+              <img src={iconX} alt="x" className="list__item-icon" />
             </li>
-            <li className='list__item'>
+            <li className='list__item item'>
               <div className='todo__isCompleted'></div>
-              Tarea numero 3
+              <span>Tarea numero 3</span>
+              <img src={iconX} alt="x" className="list__item-icon" />
             </li>
+
           </ul>
 
           {/* OPTIONS FILTERS */}
@@ -51,15 +54,20 @@ function App() {
             <li className='filter__item'>Completed</li>
             <li className='filter__item'>Clear Completed</li>
           </ul>
+
+          <div className="infoList item">
+            <p className="infoList__items">5 items left</p>
+            <p className="infoList__clear">Clear Completed</p>
+          </div>
         </div>
 
-        <ul className='filter__mobile'>
-          <li className='filter__item'>All</li>
-          <li className='filter__item'>Active</li>
-          <li className='filter__item'>Completed</li>
-        </ul>
+        <div className='filter__mobile item'>
+          <span className='filter__item '>All</span>
+          <span className='filter__item '>Active</span>
+          <span className='filter__item '>Completed</span>
+        </div>
 
-        <footer>
+        <footer className="footer">
           Drag and drop to reader list
         </footer>
       </div>
