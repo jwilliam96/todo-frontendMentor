@@ -1,12 +1,16 @@
 import imgMobileDark from "./assets/images/bg-mobile-dark.jpg"
-import sun from "./assets/images/icon-sun.svg"
 import iconX from "./assets/images/icon-cross.svg"
+import sun from "./assets/images/icon-sun.svg"
+import moon from "./assets/images/icon-moon.svg"
+import UseIsActive from "./hook/UseIsActive"
 import './App.css'
 
 function App() {
 
+  const [isActive, setIsActive] = UseIsActive(true)
+
   return (
-    <main className='todo dark'>
+    <main className={`todo ${isActive && "dark"}`}>
       <figure className='todo__image'>
         <img src={imgMobileDark} alt='' className='todo__img' />
       </figure>
@@ -15,7 +19,12 @@ function App() {
         <header className='todo__header'>
           <h1 className='todo__title'>TODO</h1>
 
-          <img src={sun} alt="sun" className='todo__dark' />
+          {
+            isActive ?
+              <img src={sun} alt="sun" className='todo__dark' onClick={() => setIsActive()} />
+              :
+              <img src={moon} alt="sun" className='todo__dark' onClick={() => setIsActive()} />
+          }
         </header>
 
         {/* CREATE TASK  */}
@@ -62,9 +71,9 @@ function App() {
         </div>
 
         <div className='filter__mobile item'>
-          <span className='filter__item '>All</span>
-          <span className='filter__item '>Active</span>
-          <span className='filter__item '>Completed</span>
+          <span className='filter__item filter__item-active'>All</span>
+          <span className='filter__item'>Active</span>
+          <span className='filter__item'>Completed</span>
         </div>
 
         <footer className="footer">
