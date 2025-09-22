@@ -8,6 +8,7 @@
     --text-tertiary: hsl(236, 9%, 61%);
     --text-disabled: hsl(236, 9%, 61%);
     --text-active: hsl(220, 98%, 61%);
+    --text-option-hover: hsl(235, 19%, 35%);
 
     --color-border: hsl(234, 39%, 85%);
     --border-items: hsl(234, 39%, 85%);
@@ -24,11 +25,11 @@
     --text-secondary: hsl(235, 16%, 43%);
     --text-tertiary: hsl(236, 9%, 61%);
     --text-disabled: hsl(235, 16%, 43%);
+    --text-option-hover: hsl(236, 33%, 92%);
 
     --color-border: hsl(237, 14%, 26%);
     --border-items: hsl(233, 14%, 35%);
 
-    --Purple-100-hover: hsl(236, 33%, 92%);
 }
 
 * {
@@ -94,7 +95,7 @@
 
 .todo__new {
     border-radius: 0.4rem;
-    margin-bottom: 1.4rem;
+    margin-bottom: 2rem;
 }
 
 
@@ -178,6 +179,14 @@ input::placeholder {
     cursor: pointer;
 }
 
+.filter__item {
+    cursor: pointer;
+}
+
+.filter__item:hover {
+    color: var(--text-option-hover);
+}
+
 .filter__mobile {
     justify-content: center;
     gap: 2rem;
@@ -190,6 +199,10 @@ input::placeholder {
 .filter__item-active {
     color: var(--text-active);
     font-weight: 700;
+}
+
+.filter__item-active:hover {
+    color: var(--text-active);
 }
 
 .footer {
